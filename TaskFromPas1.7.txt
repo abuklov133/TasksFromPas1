@@ -1,0 +1,37 @@
+package arrayTasksFrom13_12_22;
+
+import java.util.Arrays;
+
+/*
+ Имеется одномерный массив, содержащий числа от 0 до 35-ти.
+ Требуется исключить из него все элементы, значения которых меньше 15.
+*/
+public class Task2 {
+    public static void main(String[] args) {
+        int[] array = new int[36];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+        System.out.println(Arrays.toString(array));
+
+        int size = array.length;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < 15) {
+                array[i] = 0;
+                size--;
+            }
+        }
+
+        System.out.println(Arrays.toString(array));
+        System.out.println(size);
+        int[] newArray = new int[size];
+        for (int i = 0, j = 0; i < array.length; i++) {
+            if (array[i] > 0) {
+                newArray[j] = array[i];
+                j++;
+            }
+        }
+        array = newArray;
+        System.out.println(Arrays.toString(array));
+    }
+}

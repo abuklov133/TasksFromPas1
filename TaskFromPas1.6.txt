@@ -1,0 +1,26 @@
+package arrayTasksFrom13_12_22;
+
+import java.util.Arrays;
+
+// Требуется добавить элемент в произвольное место массива.
+public class Task1 {
+    public static void main(String[] args) {
+        
+        int[] array = new int[5];
+        array[0] = 1;
+        array[1] = 2;
+        array[2] = 3;
+        array[3] = 4;
+        System.out.println(Arrays.toString(array));
+
+        int index = 2;
+        for (int i = array.length - 1; i >= index; i--) {
+            array[i] = array[i - 1];
+        }
+        System.out.println(Arrays.toString(array));
+        
+        array[index] = 10;
+        System.out.println(Arrays.toString(array));
+
+    }
+}
