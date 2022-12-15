@@ -1,0 +1,18 @@
+package ArrayTasksFrom12_12_22;
+// Вывести элементы числового массива, которые больше, чем элементы, стоящие перед ними.
+import java.util.Arrays;
+
+public class Task2 {
+    public static void main(String[] args) {
+        int[] array = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * 10);
+        }
+        System.out.println(Arrays.toString(array));
+
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < array[i + 1])
+                System.out.print(array[i + 1] + " ");
+        }
+    }
+}
