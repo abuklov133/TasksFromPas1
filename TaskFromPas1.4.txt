@@ -1,0 +1,38 @@
+package ArrayTasksFrom12_12_22;
+/* В массиве определить индексы элементов,
+ значение которых не меньше заданного минимума и не больше заданного максимума.
+ */
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Task3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] array = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * 10);
+        }
+        System.out.println(Arrays.toString(array));
+
+        System.out.println("Enter the minimum value");
+        int min = scanner.nextInt();
+        System.out.println("Min = " + min);
+        System.out.println("Enter the maximum value");
+        int max = scanner.nextInt();
+        System.out.println("Max = " + max);
+        System.out.println();
+
+        int total = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > min && array[i] < max) {
+                System.out.print(array[i] + " ");
+                total++;
+            }
+        }
+        System.out.println();
+        System.out.println("total = " + total);
+
+    }
+}
